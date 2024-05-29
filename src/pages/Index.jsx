@@ -1,6 +1,9 @@
-import { Container, Text, VStack, Heading, Box, Image } from "@chakra-ui/react";
+import { Container, Text, VStack, Heading, Box, Image, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+  
   return (
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4}>
@@ -11,6 +14,7 @@ const Index = () => {
         <Text fontSize="xl" textAlign="center">
           Dive into my thoughts, experiences, and stories. Stay tuned for more updates!
         </Text>
+      <Button colorScheme="teal" onClick={() => navigate("/add-post")}>Add New Post</Button>
       </VStack>
     </Container>
   );
